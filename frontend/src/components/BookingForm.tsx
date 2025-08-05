@@ -12,7 +12,7 @@ export default function BookingForm({ onSubmit, isLoading }: BookingFormProps) {
   const [formData, setFormData] = useState<BookingFormData>({
     name: '',
     email: '',
-    from: (new Date(new Date().toDateString())).toISOString().split('T')[0], // Set default to today
+    from: (new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)).toISOString().split('T')[0], // Set default to today
     to: '',
   });
 
@@ -33,7 +33,7 @@ export default function BookingForm({ onSubmit, isLoading }: BookingFormProps) {
 
     if (!formData.from) {
       newErrors.from = 'La data di inizio è obbligatoria';
-    } else if (new Date(formData.from) < new Date(new Date().toDateString())) {
+    } else if (new Date(formData.from) < new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)) {
       newErrors.from = 'La data di inizio non può essere nel passato';
     }
 
@@ -56,7 +56,7 @@ export default function BookingForm({ onSubmit, isLoading }: BookingFormProps) {
 
     try {
       await onSubmit(formData);
-      setFormData({ name: '', email: '', from: (new Date(new Date().toDateString())).toISOString().split('T')[0], to: '' });
+      setFormData({ name: '', email: '', from: (new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)).toISOString().split('T')[0], to: '' });
       setErrors({});
     } catch (error) {
       console.error('Errore durante l\'invio:', error);
