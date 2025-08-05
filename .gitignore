@@ -1,18 +1,81 @@
-*/config/development
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Database
+*.sqlite
+*.db
+
+# Logs
+*.log
+logs/
+storage/logs/
 */logs/log-*.php
 !*/logs/index.html
+
+# Cache
+.cache/
+storage/cache/
+storage/framework/cache/
 */cache/*
 !system/cache/*
 !*/cache/index.html
 !*/cache/.htaccess
 
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# CodeIgniter specific
+/backend/writable/
+/backend/public/uploads/
+/backend/system/
+/backend/.env
+/backend/tests
+*/config/development
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+# Next.js specific
+/frontend/.next/
+/frontend/out/
+/frontend/.env*.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# Documentation
+docs/build/
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
-#codeigniter 3
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
-/vendor/
+# Testing
+coverage/
+
+# Security
+.htaccess
+*.key
+*.pem
