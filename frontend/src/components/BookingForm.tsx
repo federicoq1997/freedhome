@@ -33,7 +33,7 @@ export default function BookingForm({ onSubmit, isLoading }: BookingFormProps) {
 
     if (!formData.from) {
       newErrors.from = 'La data di inizio è obbligatoria';
-    } else if (new Date(formData.from) < new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)) {
+    } else if (formData.from < new Date().toISOString().split('T')[0]) {
       newErrors.from = 'La data di inizio non può essere nel passato';
     }
 
