@@ -78,6 +78,5 @@ Durante lo sviluppo sono stati considerati i seguenti trade-off per rispettare i
 
 ### Ottimizzazioni per il Tempo
 1. **Riuso di Conoscenze:** Applicazione di pattern Vue.js ai componenti React
-3. **Tooling Moderno:** TypeScript per ridurre errori durante lo sviluppo
-4. **AI-Assisted Development:** GPT-4 per accelerare l'apprendimento di nuove tecnologie
+2. **Tooling Moderno:** TypeScript per ridurre errori durante lo sviluppo
 
